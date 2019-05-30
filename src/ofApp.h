@@ -2,6 +2,8 @@
 
 #include "view.h"
 
+using namespace std;
+
 class ofApp : public ofBaseApp
 {
 public:

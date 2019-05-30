@@ -3,8 +3,11 @@
 //--------------------------------------------------------------
 void ofApp::setup()
 {
+    ofBackground(10);
     m.initRobots();
     m.initNeedles();
+    m.initHolds();
+    m.setupNeedles();
     v.setModel(&m);
 }
 

@@ -2,6 +2,9 @@
 
 #include "robot.h"
 #include "needle.h"
+#include "hold.h"
+
+using namespace std;
 
 class Model
 {
@@ -10,13 +13,15 @@ public:
     ~Model();
     void initRobots();
     void initNeedles();
+    void initHolds();
+    void setupNeedles();
 
-    vector<Robot> getRobotRef() { return robots; };
-    vector<Needle> getNeedleRef() { return needles; };
-
-private:
     vector<Robot> robots;
     vector<Needle> needles;
-    int robotnum = 20;
+    vector<Hold> holds;
+
+private:
+    int robotnum = 8;
     int needlenum = 1;
+    int holdnum = 3;
 };

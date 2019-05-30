@@ -10,9 +10,10 @@ public:
     void setModel(Model *ref) { m = ref; };
 
     void drawRobots();
-    void drawRobot(Robot *r);
+    void drawRobot(Robot r);
     void drawNeedles();
-    void drawNeedle(Needle *n);
+    void drawNeedle(Needle n);
+    void drawHolds();
 
 private:
     Model *m;

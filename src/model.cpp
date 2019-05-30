@@ -9,7 +9,7 @@ void Model::initRobots()
     {
         float px = ofRandom(0, ofGetWidth());
         float py = ofRandom(0, ofGetHeight());
-        robots.push_back(new Robot(px, py));
+        robots.push_back(Robot(px, py));
     }
 }
 
@@ -17,8 +17,23 @@ void Model::initNeedles()
 {
     for (int i = 0; i < needlenum; i++)
     {
-        ofVec3f start = ofVec3f(10, 10, 0);
-        ofVec3f end = ofVec3f(200, 200, 0);
-        needles.push_back(new Needle(start, end));
+        needles.push_back(Needle());
     }
+}
+
+void Model::initHolds()
+{
+    for (int i = 0; i < holdnum; i++)
+    {
+        holds.push_back(Hold());
+    }
+}
+
+void Model::setupNeedles()
+{
+    needles.at(0).setStart(robots.front().getPos());
+    for(int i=0; i < robotnum; i++){
+        needles.at(0).addEdge(robots.at(i).getPos());
+    }
+    needles.at(0).setEnd(robots.back().getPos());
 }
